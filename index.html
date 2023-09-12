@@ -2,7 +2,7 @@
 <html lang="en">
 
     <head>
-        <meta charset="UTF-8"/>
+        <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Slider</title>
@@ -18,7 +18,8 @@
                 <div class="slider-wrapper" tabindex="0">
 
                     <div class="item">
-                        <img :src="slides[activeImage].image" alt="Spiderman" />
+                        <img :src="slides[activeImage].image"
+                            alt="slides[activeImage].title" />
                         <div class="text">
                             <h3>{{slides[activeImage].title}}</h3>
                             <p>
@@ -33,7 +34,20 @@
                         <div class="prev" @click="prev()"></div>
                         <div class="next" @click="next()"></div>
 
-                        <div class="thumb active">
+                        <!-- operatore ternario -->
+                        <template v-for="(element, i) in slides"
+                            :key="i">
+
+                            <div class="thumb"
+                                :class="i == activeImage ? 'active' : ''">
+
+                                <img :src="element.image"
+                                    :alt="element.title" />
+
+                            </div>
+
+                        </template>
+                        <!-- <div class="thumb active">
                             <img src="./assets/img/01.webp" alt="Spiderman" />
                         </div>
                         <div class="thumb">
@@ -47,7 +61,7 @@
                         </div>
                         <div class="thumb">
                             <img src="./assets/img/05.webp" alt="Avengers" />
-                        </div>
+                        </div> -->
                     </div>
 
                 </div>
