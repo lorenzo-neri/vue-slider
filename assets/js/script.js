@@ -85,4 +85,8 @@ createApp({
         },
     },
 
+    mounted() {
+        this.startAutoPlay(); // Inizia l'autoplay quando il componente è montato
+    },
+
 }).mount('#app')
