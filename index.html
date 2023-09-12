@@ -39,7 +39,8 @@
                             :key="i">
 
                             <div class="thumb"
-                                :class="i == activeImage ? 'active' : ''">
+                                :class="i == activeImage ? 'active' : ''"
+                                @click="selectImage(i)">
 
                                 <img :src="element.image"
                                     :alt="element.title" />
