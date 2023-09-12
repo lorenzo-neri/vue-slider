@@ -5,7 +5,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Slider</title>
+        <title>Vue Slider</title>
         <link rel="stylesheet" href="./assets/css/style.css" />
         <script src="./assets/js/script.js" defer></script>
     </head>
@@ -15,11 +15,13 @@
         <div id="app">
 
             <div class="container">
-                <div class="slider-wrapper" tabindex="0">
+                <div class="slider-wrapper" tabindex="0"
+                    @mouseenter="pauseAutoPlay" @mouseleave="resumeAutoPlay">
 
                     <div class="item">
                         <img :src="slides[activeImage].image"
-                            alt="slides[activeImage].title" />
+                            alt="slides[activeImage].title"
+                            @load.once="startAutoPlay" />
                         <div class="text">
                             <h3>{{slides[activeImage].title}}</h3>
                             <p>
