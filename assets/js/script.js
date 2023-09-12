@@ -34,6 +34,7 @@ createApp({
             ],
         }
     },
+    
     methods: {
         next() {
             console.log(this.next);
@@ -44,7 +45,7 @@ createApp({
             console.log(this.slides); //Proxy
 
             if (this.activeImage > this.slides.length - 1) {
-                this.activeImage = 0
+                this.activeImage = 0;
             }
             
         },
@@ -52,7 +53,7 @@ createApp({
             console.log(this.prev);
             this.activeImage--;
             if (this.activeImage < 0) {
-                this.activeImage = this.slides.length - 1
+                this.activeImage = this.slides.length - 1;
             }
         }
     }
